@@ -12,7 +12,7 @@ jobs:
     - cat /etc/mongod.conf
     - sudo systemctl restart mongod
     - sleep 20
-    - sudo systemctl status mongod
+    - sudo systemctl status mongod --full
     - mongo --eval 'rs.initiate()'
     - sleep 20
     - sudo cat /var/log/mongodb/mongod.log
