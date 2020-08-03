@@ -10,4 +10,5 @@ jobs:
     - |
       echo -e '\nreplication:\n  replSetName: rs0' | sudo tee -a /etc/mongod.conf &&
       sudo systemctl restart mongod &&
+      sleep 10 &&
       mongo --eval 'rs.initiate()'
