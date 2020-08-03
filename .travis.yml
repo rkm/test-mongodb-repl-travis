@@ -8,7 +8,8 @@ jobs:
     - mongodb
     script:
     # Issue with spaces after the colon below
-    - printf '\nreplication:\n  replSetName\: rs0' | sudo tee -a /etc/mongod.conf
+    - |
+      echo -e '\nreplication:\n  replSetName: rs0' | sudo tee -a /etc/mongod.conf
     - cat /etc/mongod.conf
     - sudo systemctl restart mongod
     - sleep 20
